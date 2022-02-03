@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-data-note</artifactId>
+        <groupId>com.moon</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-data-2.1.x-sample</artifactId>
+    <packaging>pom</packaging>
+    <description>
+        Spring Data 2.1.x 系列版本示例工程聚合项目。
+        子工程是 Spring Data 各个模块使用示例。
+    </description>
+
+    <modules>
+        <module>spring-data-jpa</module>
+    </modules>
+
+    <properties>
+        <!-- spring 版本 -->
+        <spring.version>5.1.6.RELEASE</spring.version>
+        <!-- spring data 版本 -->
+        <spring-data.version>2.1.8.RELEASE</spring-data.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring框架相关依赖 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- Jpa 的实现框架 Hibernate-->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>5.0.7.Final</version>
+            </dependency>
+            <!-- spring data jpa 依赖 -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data.version}</version>
+            </dependency>
+            <!-- Spring Data Redis 依赖 -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${spring-data.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
